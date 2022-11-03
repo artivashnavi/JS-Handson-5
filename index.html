@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>JS Handson-5</h1></center>
+    <b>Q.1 :Count Characters
+        You are given a string 
+        S
+        , and your task is to return an array 
+        B(
+        having a size of 
+        2
+        )
+        , where 
+        B
+        [
+        0
+        ]
+         contains the count of character A (uppercase) in string S and 
+        B
+        [
+        1
+        ]
+         contains the count of character D (uppercase) in string S.
+        <br>
+        Note: You have to complete countCharacters function. No need to take any input.</b><br>
+            <pre>
+                    
+            const countCharacters = (S) => 
+            {
+  
+            let res = 0 ,  c;
+ 
+            for (let i = 0; i < S.length; i++)
+            {
+            // checking character in string
+            if (S.charAt(i) == 'c')
+            res++;
+            }
+            return res;
+   
+            };
+ 
+           </pre>
+           <b>Output:-</b>
+        <pre>
+        Sample Input
+        AbaDd
+
+        Sample Output
+        1 1
+    </pre>
+    <br><br>
+    <!-- ############################ -->
+    <b>Q.2:-Count the Heads
+        Tina is given a string  S which contains the first letter of all the student names in her class. She got a curiosity to check how many people have their names starting from the same alphabet. So given a string  S , she decided to write a code that finds out the count of characters that occur more than once in the string.
+        <br>
+        Note: You have to complete Count Head function. No need to take any input.
+        </b>
+    <pre>
+        
+       var Count_Occ = (s) => 
+       {
+    
+       };
+ 
+
+            
+    </pre>
+    <b>Output:-</b>
+    <pre>
+        Sample Input 
+        prepbytes
+
+        Sample Output 
+        e2p2
+    </pre>
+    <br><br>
+    <!-- ################################################# -->
+    <b>Q.3:-Count the Vowels
+        You are given a string 
+        S
+         containing both uppercase and lowercase letters. You need to find out the number of vowels in the given string.
+        <br>
+        Note: You have to complete Count_Vowel function. No need to take any input.
+        </b>
+        <pre>
+            
+          var Count_Vowels= (S) => 
+          {
+          const V = S.match(/[aeiou]/gi).length;//
+          return V;
+          };
+ 
+
+
+        </pre>
+        <br><br>
+        <b>Output:-</b>
+    <pre>
+        Sample Input
+        Prepbytes
+
+        Sample Output
+        2
+    </pre>
+<br><br>
+<!-- ######################################################## -->
+<b>Q.4:-Concatenate the Strings
+    You are given two strings 
+    S
+    1
+     and 
+    S
+    2
+     (containing both uppercase and lowercase letters), You need to retrun a string which is the concatenation of both the given strings. 
+    
+    <br>Note: You have to complete Concatenate_Strings function. No need to take any input.</b>
+    <pre>
+        
+      var Concatenate_Strings = (S1, S2) => 
+      {
+      var a = S1.concat(S2);
+      return a;
+      };
+ 
+
+    </pre>
+    <b>Output:-</b>
+    <pre>
+        Prepbytes
+
+        Sample Output
+        Prepbytes
+    </pre>
+    <br><br>
+<!-- ############################################## -->
+    <b>Q.5:-Find Length
+        You are given a string 
+        S
+        , and your task is to return the length of the string 
+        S
+        .
+        
+       <br> Note: You have to solve it without using length method. You have to complete findLength function. No need to take any input.</b>
+
+        <pre>
+         
+        const findLength = (S) => 
+        {
+       //     var a = S.length;
+       //     return a;
+        var length = 0;
+        while(S[length] !== undefined)
+       {
+       length++; 
+       }
+       return length;
+       };
+
+
+        </pre>
+        <b>Output:-</b>
+        <pre>
+            Sample Input
+            CeDqe
+
+            Sample Output
+            5
+        </pre>
+
+        <br><br>
+        <b>Q.7:-Find the Winner
+            You are given a string 
+            S
+             consisting of two letters 
+            A
+             and 
+            D
+            ,where each character represent the winner of N games played between Aditya and Danish, where letter 
+            A
+             represents the win of Aditya and letter 
+            D
+             represents the win of Danish. 
+            You need to find out the that which player wins the maximum number of games or there is a draw between them.
+            <br>
+            Note: You have to complete Game_Winner function. No need to take any input.</b>
+
+        <pre>
+            
+            
+ 
+            var Game_Winner = (S) => 
+            {
+              let i, count = 0, N;
+                    N = S.length;
+                    let st = [];
+             
+                    for (i = 0; i < N; i++)
+                    {
+                        if (st.length === 0 ||
+                            st[st.length - 1] != S[i])
+                        {
+                            st.push(S[i]);
+                        }
+                        else
+                        {
+                            count++;
+                            st.pop();
+                        }
+                    }
+             
+                    // Check who has won
+                    if (count % 2 === 0)
+                    {
+                        return "Draw";
+                    }
+                    else
+                    {
+                       return "Danish";
+                    }
+                 
+                
+                 
+            };
+             
+            
+
+
+        </pre>
+        <b>Output:-</b>
+     <pre>
+        Sample Input 1
+        ADDAAADDDDD
+        
+        Sample Output 1
+        Danish
+        
+        Sample Input 2
+        ADDAAADD
+        
+        Sample Output 2
+        Draw
+     </pre>
+<br><br>
+<b>Q.8:-Join Strings
+    You are given two strings 
+    S
+     and 
+    P
+    , and your task is to concatenate them and return the concatenated string.
+    <br>
+    Note: You have to complete joinStrings function. No need to take any input.</b>
+     <pre>
+          
+              
+    
+const joinStrings = (S, P) => 
+{
+   let com = S.concat(P);
+   return com;
+ };
+
+
+</pre>
+     <b>Output:-</b>
+     <pre>
+        SSample Input
+        PrepBytes Technologies
+        
+        Sample Output
+        PrepBytesTechnologies
+     </pre>
+
+     <br><br>
+     <!-- ########################################### -->
+   
+    <b>Q.9:-Plaindrome Check
+        You are given a string 
+        S
+        , Your task is to check wether the given string is a 
+        P
+        a
+        l
+        i
+        n
+        d
+        r
+        o
+        m
+        e
+         or not.
+        
+        A 
+        P
+        a
+        l
+        i
+        n
+        d
+        r
+        o
+        m
+        e
+         is a string, which turnout same when read in reverse direction.
+        Example: "naman" is a Palindrome.
+        String can contain both upppercase lowercase letters.
+        <br>
+        Note: You have to complete Plain_Check function. No need to take any input.</b> 
+         <pre>
+              
+            
+ 
+     
+var Palin_Check = (str) =>
+{
+	 let a = 0;
+	 let b = str.length - 1;
+	 
+	 while(a < b)
+	  {
+	   if(str[a] === str[b])
+	     {
+	       a++;
+	       b--;
+	     }
+	     else 
+	       {
+	         return "False";
+	       }
+	  }
+	  return "True";
+}
+
+
+
+            
+            
+         </pre>
+         <b>Output:-</b>
+         <pre>
+            Sample Input 1
+            Naman
+            
+            Sample Output 1
+            False
+            
+            Sample Input 2
+            naman
+            
+            Sample Output 2
+            True
+         </pre>
+
+
+
+         <b>Q.10:-Reverse the String
+            You are given a string 
+            S
+            , Your task is to Reverse the string.
+            String can contain both upppercase lowercase letters. <br>
+            Note: You have to complete Reverse_String function. No need to take any input.</b>
+             <pre>
+                  
+        
+     var Reverse_String = (str) => 
+    {
+     const r = str.split("");
+     const rarr = r.reverse();
+     const jarr = rarr.join("");
+     return jarr;
+   };
+ 
+
+        </pre>
+             <b>Output:-</b>
+             <pre>
+                Sample Input
+                I am utkarsh raj
+
+                Sample Output
+                jar hsraktu ma I
+             </pre>
+        
+             <br><br>
+             <!-- ########################################### -->
+
+ <b>Q.11:-Match the Strings
+                You are given two strings 
+                S
+                1
+                 and 
+                S
+                2
+                , Your task is to print 
+                Y
+                E
+                S
+                 if both strings are same else print 
+                N
+                O
+                .
+                <br>
+                Note: You have to complete String_Match function. No need to take any input.</b>
+                 <pre>
+                      
+                          
+             
+      var String_Match = (S1,S2) => 
+     {
+      if(S1 === S2)
+      {
+        return "YES";
+      }
+      else{
+        return "NO";
+      }
+      };
+ 
+
+            
+            
+            </pre>
+                 <b>Output:-</b>
+                 <pre>
+                    Sample Input
+                    Prepbytes
+                    Prepbytes
+
+                    Sample Output
+                    YES
+                 </pre>
+            
+                 <br><br>
+                 <!-- ########################################### -->
+                 <b>Q.12:-String Replace
+                    You are given a string 
+                    S
+                    , along with a pattern string and a text string. 
+                    You need to repalce the pattern string in 
+                    S
+                     to the text string.
+                    <br>
+                    Note: You have to complete Replace function. No need to take any input.</b>
+                     <pre>
+                          
+                   
+             var Replace = (S, pattern , text) => 
+            {
+            const R = S.replace(pattern,text);
+             return R;
+            };
+ 
+
+                
+                
+                </pre>
+                     <b>Output:-</b>
+                     <pre>
+         Sample Input
+        Hi, I am You.
+        You
+                        
+        Sample Output
+        Hi, I am Prepbytes.
+                     </pre>
+                
+                     <br><br>
+                     <!-- ########################################### -->
+
+                     <b>Q.13:-Split the String
+                        You are given a string 
+                        S
+                        , Your task is to split the string with respect to spaces.
+                        <br>
+                        Note: You have to complete Split_the_String function. No need to take any input.</b>
+                         <pre>
+                              
+                                  
+                        
+                    
+             var Split_the_string = (S) => 
+             {
+              const s = S.split();
+              return s;
+        
+             };
+ 
+
+                    
+                    
+                    </pre>
+                         <b>Output:-</b>
+                         <pre>
+            Sample Input
+            I am utkarsh raj
+                            
+            Sample Output
+            I
+            am
+            utkarsh
+            raj
+                         </pre>
+                    
+                         <br><br>
+                         <!-- ########################################### -->
+                         
+<!-- ########################################### -->
+<b>Q.14:-Count the Vowels and Consonants
+    You are given a string 
+    S
+     containing both uppercase and lowercase letters. 
+    You need to find out the number of vowels and the number of consonants in the given string.
+    <br>
+    Note: You have to complete Count_Vowels function and Count_Consonants function. No need to take any input.</b>
+     <pre>
+          
+   
+
+        var Count_Vowels= (S) => 
+        {
+              const V = S.match(/[aeiou]/gi).length;//
+              return V; 
+        };
+        var Count_Consonants= (S) => 
+        {
+          let ans = S.split('').filter(e =>
+          e.match(/[^aeiou]/) !==null).length;
+          return ans;
+        };
+         
+        
+
+
+
+
+</pre>
+     <b>Output:-</b>
+     <pre>
+        Sample Input
+        Prepbytes
+        
+        Sample Output
+        2
+        7
+     </pre>
+
+     <br><br>
+    </body>
+</html>
+
+
+
+
+</body>
+</html>

@@ -40,20 +40,20 @@
         Note: You have to complete countCharacters function. No need to take any input.</b><br>
             <pre>
                     
-            const countCharacters = (S) => 
-            {
+            
+const countCharacters = (S) => 
+{
   
-            let res = 0 ,  c;
+ var B = [];
  
-            for (let i = 0; i < S.length; i++)
-            {
-            // checking character in string
-            if (S.charAt(i) == 'c')
-            res++;
-            }
-            return res;
+  B[0] = [...S].filter(ch => ch == 'A').length;
+  B[1] = [...S].filter(ch => ch == 'D').length;
+  
+  return B;
    
-            };
+};
+ 
+
  
            </pre>
            <b>Output:-</b>
@@ -73,10 +73,31 @@
         </b>
     <pre>
         
-       var Count_Occ = (s) => 
-       {
-    
-       };
+      
+var Count_Occ = (s) => 
+{
+    let count=1;
+    let str='';
+    let op="";
+    for(let i=0;i<s.length;i++){
+      for(j=i+1;j<s.length;j++){
+        if(s[i]==s[j]){
+          count++;
+        }
+      }
+      if(count>1){
+        str=s[i];
+        op=op+" "+s[i]+count;
+        s=s.replace(str,' ');
+        s=s.split(str).join('');
+      }
+      count=1;
+    }
+    return op.split(' ').sort().join('');
+
+};
+ 
+
  
 
             
@@ -204,42 +225,27 @@
             
             
  
-            var Game_Winner = (S) => 
-            {
-              let i, count = 0, N;
-                    N = S.length;
-                    let st = [];
              
-                    for (i = 0; i < N; i++)
-                    {
-                        if (st.length === 0 ||
-                            st[st.length - 1] != S[i])
-                        {
-                            st.push(S[i]);
-                        }
-                        else
-                        {
-                            count++;
-                            st.pop();
-                        }
-                    }
-             
-                    // Check who has won
-                    if (count % 2 === 0)
-                    {
-                        return "Draw";
-                    }
-                    else
-                    {
-                       return "Danish";
-                    }
-                 
-                
-                 
-            };
-             
-            
-
+var Game_Winner = (S) => 
+{
+  let countA= S.match(/[A]/gmi).length;
+  let countD= S.match(/[D]/gmi).length;
+  if(countA > countD)
+  {
+    return 'Aditya';
+  }
+   else if(countA < countD)
+  {
+    return 'Danish';
+  }
+  else
+  {
+    return 'Draw';
+  } 
+     
+    
+     
+};
 
         </pre>
         <b>Output:-</b>
